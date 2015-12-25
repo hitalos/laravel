@@ -8,7 +8,7 @@ RUN docker-php-ext-install mcrypt mbstring zip
 RUN php -r "readfile('https://getcomposer.org/installer');" | php
 RUN mv composer.phar /usr/local/bin/composer
 
-ADD ./install.sh /
-RUN /install.sh
-
 WORKDIR /var/www
+ADD ./install.sh /
+CMD /install.sh
+EXPOSE 8000
