@@ -8,5 +8,5 @@ RUN docker-php-ext-install mcrypt mbstring pdo_mysql pdo_pgsql zip
 RUN echo 'precedence ::ffff:0:0/96  100' >> /etc/gai.conf
 
 WORKDIR /var/www
-CMD php ./artisan serve --port=80
+CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80
