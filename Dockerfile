@@ -13,6 +13,12 @@ RUN mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
 RUN curl https://nodejs.org/dist/v5.5.0/node-v5.5.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz
 
+RUN echo America/Maceio > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+RUN echo "locales locales/locales_to_be_generated multiselect pt_BR.UTF-8 UTF-8" | debconf-set-selections && \
+	echo "locales locales/default_environment_locale select pt_BR.UTF-8" | debconf-set-selections
+RUN apt-get install -y locales
+ENV LC_ALL pt_BR.UTF-8
+
 WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80
