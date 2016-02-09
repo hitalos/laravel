@@ -8,10 +8,12 @@ RUN docker-php-ext-install ldap mcrypt mbstring pdo_mysql pdo_pgsql zip
 
 RUN echo 'precedence ::ffff:0:0/96  100' >> /etc/gai.conf
 
-RUN php -r "readfile('https://getcomposer.org/installer');" | php
-RUN mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
-RUN curl https://nodejs.org/dist/v5.5.0/node-v5.5.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz
-RUN tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz
+RUN php -r "readfile('https://getcomposer.org/installer');" | php && \
+	mv composer.phar /usr/bin/composer && \
+	chmod +x /usr/bin/composer
+RUN curl https://nodejs.org/dist/v5.5.0/node-v5.5.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz &&\
+	tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz &&\
+	rm /tmp/node-latest.tar.gz
 
 RUN echo America/Maceio > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 RUN echo "locales locales/locales_to_be_generated multiselect pt_BR.UTF-8 UTF-8" | debconf-set-selections && \
