@@ -1,3 +1,6 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/hitalos/laravel.svg)](https://hub.docker.com/r/hitalos/laravel/)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/hitalos/laravel/latest.svg)]()
+
 # laravel
 Docker container to run Laravel 5.2 projects. Support to Mysql, PostgreSQL and SQLite databases.
 
