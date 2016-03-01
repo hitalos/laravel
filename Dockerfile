@@ -14,6 +14,10 @@ RUN echo "locales locales/locales_to_be_generated multiselect pt_BR.UTF-8 UTF-8"
 RUN apt-get install -y locales
 ENV LC_ALL pt_BR.UTF-8
 
+RUN curl https://nodejs.org/dist/v5.7.0/node-v5.7.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz &&\
+    tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz &&\
+    rm /tmp/node-latest.tar.gz
+
 WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80

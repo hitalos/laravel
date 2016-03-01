@@ -3,7 +3,7 @@
 # laravel
 Docker image to run Laravel 5.x projects. Support to Mysql, PostgreSQL and SQLite databases.
 
-## Tags disponíveis
+## Tags
 * `latest` [(PHP 7.0.3)](https://github.com/hitalos/laravel/blob/master/Dockerfile)
 * `alpine` [(PHP 5.6.17)](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)
 
