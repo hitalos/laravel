@@ -4,8 +4,19 @@
 Docker image to run Laravel 5.x projects. Support to Mysql, PostgreSQL and SQLite databases.
 
 ## Tags
-* **`latest`** [(`php` 7.0.3, `nodejs` 5.7.0 and `npm` 3.6.0)](https://github.com/hitalos/laravel/blob/master/Dockerfile)
-* **`alpine`** [(`php` 5.6.17, `nodejs` 4.3.0 and `npm` 2.14.12)](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)
+* [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
+ * `php` 7.0.3
+ * `nodejs` 5.7.0
+ * `npm` 3.6.0
+* [**`alpine`**:](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)    
+ * `php` 5.6.17
+ * `nodejs` 4.3.0
+ * `npm` 2.14.12
+
+## Supported Databases (**PDO**)
+* `mysql`
+* `pgsql`
+* `mssql` (via dblib)
 
 ## Installing
     docker pull hitalos/laravel
