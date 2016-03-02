@@ -18,6 +18,9 @@ RUN curl https://nodejs.org/dist/v5.7.0/node-v5.7.0-linux-x64.tar.gz -o /tmp/nod
     tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz &&\
     rm /tmp/node-latest.tar.gz
 
+RUN php -r "readfile('https://getcomposer.org/installer');" | php &&\
+    mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
+
 WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80
