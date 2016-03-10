@@ -57,7 +57,7 @@ RUN curl https://nodejs.org/dist/v5.8.0/node-v5.8.0-linux-x64.tar.gz -o /tmp/nod
 
 # Download and install Composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php &&\
- -    mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
+    mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
 
 # Set timezone
 # RUN echo America/Maceio > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
