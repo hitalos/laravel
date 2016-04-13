@@ -1,4 +1,4 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/hitalos/laravel.svg)](https://hub.docker.com/r/hitalos/laravel/) [![ImageLayers Size](https://img.shields.io/imagelayers/image-size/hitalos/laravel/latest.svg)]()
+![Docker Pulls](https://img.shields.io/docker/pulls/hitalos/laravel.svg)
 
 # laravel
 Docker image to run PHP and Laravel 5.x projects.
@@ -45,3 +45,34 @@ web:
 Then run using this command:
 
     docker-compose up
+
+
+If you want to use a database, you can create your `docker-compose.yml` with two containers.
+```
+web
+    image: hitalos/laravel:latest
+    ports:
+        - 80:80
+    volumes:
+        - ./:/var/www
+    links:
+        - db
+    environment:
+        DB_HOST: db
+        DB_DATABASE: dbname
+        DB_USERNAME: username
+        DB_PASSWORD: p455w0rd
+        DB_CONNECTION: [pgsql or mysql]
+db:
+    image: [postgres or mysql]
+    environment:
+        # with mysql
+        MYSQL_DATABASE: dbname
+        MYSQL_USER: username
+        MYSQL_PASSWORD: p455w0rd
+
+        # with postgres
+        POSTGRES_DB: dbname
+        POSTGRES_USER: username
+        POSTGRES_PASSWORD: p455w0rd
+```
