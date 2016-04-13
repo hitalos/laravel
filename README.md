@@ -19,6 +19,12 @@ Docker image to run PHP and Laravel 5.x projects.
 * `pgsql`
 * `sqlite`
 
+## Extra supported extensions
+* `exif`
+* `gd`
+* `ldap`
+* `mongodb`
+
 ## Installing
     docker pull hitalos/laravel
 
