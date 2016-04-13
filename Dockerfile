@@ -62,14 +62,16 @@ RUN php -r "readfile('https://getcomposer.org/installer');" | php &&\
 # Download and install MongoDB extension
 WORKDIR /tmp
 RUN git clone https://github.com/mongodb/mongo-php-driver.git && \
-cd mongo-php-driver && \
-git submodule sync && \
-git submodule update --init && \
-phpize && \
-./configure && \
-make all -j 5 && \
-make install && \
-echo 'extension=mongodb.so' > /usr/local/etc/php/conf.d/mongodb.ini
+    cd mongo-php-driver && \
+    git submodule sync && \
+    git submodule update --init && \
+    phpize && \
+    ./configure && \
+    make all -j 5 && \
+    make install && \
+    cd /tmp && \
+    rm -rf mongo-php-driver && \
+    echo 'extension=mongodb.so' > /usr/local/etc/php/conf.d/mongodb.ini
 
 # Set timezone
 # RUN echo America/Maceio > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
