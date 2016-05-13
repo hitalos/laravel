@@ -1,4 +1,4 @@
-FROM php:7.0.5
+FROM php:7.0.6
 MAINTAINER hitalos <hitalos@gmail.com>
 
 # Installing dependencies
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get -y install \
     freetds-dev \
     git \
+    libfontconfig \
     libfreetype6-dev \
     libicu-dev \
     libjpeg-dev \
@@ -19,9 +20,9 @@ RUN apt-get -y install \
     zlib1g-dev
 
 # Configuring extensions to compile
-RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
-RUN docker-php-ext-configure pdo_dblib --with-libdir=lib/x86_64-linux-gnu/
-RUN docker-php-ext-configure gd \
+RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
+docker-php-ext-configure pdo_dblib --with-libdir=lib/x86_64-linux-gnu/ && \
+docker-php-ext-configure gd \
     --with-jpeg-dir=lib/x86_64-linux-gnu \
     --with-freetype-dir=lib/x86_64-linux-gnu \
     --with-webp-dir=lib/x86_64-linux-gnu/
@@ -51,7 +52,7 @@ RUN apt-get install -y locales
 ENV LC_ALL pt_BR.UTF-8
 
 # Download and install NodeJS
-RUN curl https://nodejs.org/dist/v5.10.1/node-v5.10.1-linux-x64.tar.gz -o /tmp/node-latest.tar.gz &&\
+RUN curl https://nodejs.org/dist/v6.1.0/node-v6.1.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz && \
     tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz &&\
     rm /tmp/node-latest.tar.gz
 
@@ -60,17 +61,7 @@ RUN php -r "readfile('https://getcomposer.org/installer');" | php &&\
     mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
 
 # Download and install MongoDB extension
-WORKDIR /tmp
-RUN git clone https://github.com/mongodb/mongo-php-driver.git && \
-    cd mongo-php-driver && \
-    git submodule sync && \
-    git submodule update --init && \
-    phpize && \
-    ./configure && \
-    make all -j 5 && \
-    make install && \
-    cd /tmp && \
-    rm -rf mongo-php-driver && \
+RUN pecl install mongodb && \
     echo 'extension=mongodb.so' > /usr/local/etc/php/conf.d/mongodb.ini
 
 # Set timezone
