@@ -5,9 +5,9 @@ Docker image to run PHP and Laravel 5.x projects.
 
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.0.6
- * `nodejs` 6.1.0
- * `npm` 3.8.6
+ * `php` 7.0.7
+ * `nodejs` 6.2.0
+ * `npm` 3.8.9
 * [**`alpine`**:](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)    
  * `php` 5.6.21
  * `nodejs` 4.3.0
