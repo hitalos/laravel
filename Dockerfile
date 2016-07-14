@@ -1,4 +1,4 @@
-FROM php:7.0.7
+FROM php:7.0.8
 MAINTAINER hitalos <hitalos@gmail.com>
 
 # Installing dependencies
@@ -52,7 +52,7 @@ RUN apt-get install -y locales
 ENV LC_ALL pt_BR.UTF-8
 
 # Download and install NodeJS
-RUN curl https://nodejs.org/dist/v6.2.0/node-v6.2.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz && \
+RUN curl https://nodejs.org/dist/v6.3.0/node-v6.3.0-linux-x64.tar.gz -o /tmp/node-latest.tar.gz && \
     tar -C /usr/local --strip-components 1 -xzf /tmp/node-latest.tar.gz &&\
     rm /tmp/node-latest.tar.gz
 
