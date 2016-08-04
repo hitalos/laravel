@@ -7,13 +7,13 @@ This image it's for development. **Optimize to use in production!**
 
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.0.8
-   * `composer` 1.1.3
- * `nodejs` 6.3.0
+ * `php` 7.0.9
+   * `composer` 1.2.0
+ * `nodejs` 6.3.1
    * `npm` 3.10.3
 * [**`alpine`**:](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)    
- * `php` 5.6.23
-   * `composer` 1.1.3
+ * `php` 5.6.24
+   * `composer` 1.2.0
  * `nodejs` 6.2.0
    * `npm` 3.8.9
 
