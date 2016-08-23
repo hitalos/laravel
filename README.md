@@ -1,21 +1,18 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/hitalos/laravel.svg)
 
 # laravel
-Docker image to run PHP and Laravel 5.x projects.
+Docker image to run PHP (supporting Laravel) and Node projects.
 
 This image it's for development. **Optimize to use in production!**
 
+In the last update, I changed the base image to `php:alpine` for size optimizing.
+
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.0.9
+ * `php` 7.0.10
    * `composer` 1.2.0
- * `nodejs` 6.4.0
-   * `npm` 3.10.3
-* [**`alpine`**:](https://github.com/hitalos/laravel/blob/alpine/Dockerfile)    
- * `php` 5.6.24
-   * `composer` 1.2.0
- * `nodejs` 6.2.0
-   * `npm` 3.8.9
+ * `nodejs` 6.5.0
+   * `npm` 3.10.6
 
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)
