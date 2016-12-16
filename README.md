@@ -5,14 +5,15 @@ Docker image to run PHP (supporting Laravel) and Node projects.
 
 This image it's for development. **Optimize to use in production!**
 
-In the last update, I changed the base image to `php:alpine` for size optimizing.
+In the latest update, I changed the base image to `php:alpine` for size optimizing.
 
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.0.10
-   * `composer` 1.2.0
- * `nodejs` 6.5.0
-   * `npm` 3.10.6
+ * `php` 7.1.0
+   * `composer` 1.2.4
+ * `nodejs` 7.2.1
+   * `npm` 4.0.5
+   * `yarn` 0.17.10
 
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)

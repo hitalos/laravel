@@ -8,9 +8,10 @@ ADD install-php.sh /usr/sbin/install-php.sh
 RUN /usr/sbin/install-php.sh
 
 # Download and install NodeJS
-ENV NODE_VERSION 6.5.0
+ENV NODE_VERSION 7.2.1
 ADD install-node.sh /usr/sbin/install-node.sh
 RUN /usr/sbin/install-node.sh
+RUN npm i -g yarn
 
 WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
