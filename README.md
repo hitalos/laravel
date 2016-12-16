@@ -57,7 +57,7 @@ Then run using this command:
 
 If you want to use a database, you can create your `docker-compose.yml` with two containers.
 ```
-web
+web:
     image: hitalos/laravel:latest
     ports:
         - 80:80
