@@ -2,7 +2,8 @@
 
 apk add freetds freetype icu libintl libldap libjpeg libmcrypt libpng libpq libwebp
 
-TMP="freetds-dev \
+TMP="curl-dev \
+		freetds-dev \
     freetype-dev \
     gettext-dev \
     icu-dev \
@@ -27,6 +28,7 @@ docker-php-ext-configure pdo_dblib --with-libdir=lib/
     mv /usr/src/php/ext/mongo* /usr/src/php/ext/mongodb
 
 docker-php-ext-install \
+    curl \
     exif \
     gd \
     gettext \
