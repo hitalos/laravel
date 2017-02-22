@@ -9,9 +9,9 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.1.1
+ * `php` 7.1.2
    * `composer` 1.3.2
- * `nodejs` 7.5.0
+ * `nodejs` 7.6.0
    * `npm` 4.2.0
    * `yarn` 0.20.3
 
@@ -22,6 +22,7 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 * `sqlite`
 
 ## Extra supported extensions
+* `curl`
 * `exif`
 * `gd`
 * `ldap`

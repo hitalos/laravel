@@ -42,6 +42,9 @@ docker-php-ext-install \
     xmlrpc \
     zip
 
+# Download trusted certs 
+mkdir -p /etc/ssl/certs && update-ca-certificates
+
 # Install composer
 php -r "readfile('https://getcomposer.org/installer');" | php && \
    mv composer.phar /usr/bin/composer && \
