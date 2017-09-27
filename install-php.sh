@@ -3,7 +3,7 @@
 apk add freetds freetype icu libintl libldap libjpeg libmcrypt libpng libpq libwebp
 
 TMP="curl-dev \
-		freetds-dev \
+    freetds-dev \
     freetype-dev \
     gettext-dev \
     icu-dev \

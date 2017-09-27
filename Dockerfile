@@ -1,5 +1,5 @@
 FROM php:alpine
-MAINTAINER hitalos <hitalos@gmail.com>
+LABEL maintainer="hitalos <hitalos@gmail.com>"
 
 RUN apk update && apk upgrade && apk add bash git
 
