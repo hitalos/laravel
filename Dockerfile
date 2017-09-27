@@ -1,7 +1,7 @@
 FROM php:alpine
 MAINTAINER hitalos <hitalos@gmail.com>
 
-RUN apk update && apk upgrade && apk add git
+RUN apk update && apk upgrade && apk add bash git
 
 # Install PHP extensions
 ADD install-php.sh /usr/sbin/install-php.sh
