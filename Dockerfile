@@ -8,7 +8,7 @@ ADD install-php.sh /usr/sbin/install-php.sh
 RUN /usr/sbin/install-php.sh
 
 # Download and install NodeJS
-ENV NODE_VERSION 8.8.0
+ENV NODE_VERSION 8.9.1
 ADD install-node.sh /usr/sbin/install-node.sh
 RUN /usr/sbin/install-node.sh
 RUN npm i -g yarn
