@@ -34,7 +34,6 @@ docker-php-ext-install \
     gettext \
     intl \
     ldap \
-    mcrypt \
     mongodb \
     pdo_dblib \
     pdo_mysql \
