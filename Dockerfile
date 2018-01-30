@@ -13,6 +13,10 @@ ADD install-node.sh /usr/sbin/install-node.sh
 RUN /usr/sbin/install-node.sh
 RUN npm i -g yarn
 
+RUN apk add curl ca-certificates
+RUN update-ca-certificates
+RUN rm -rf /var/cache/apk/*
+
 WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80
