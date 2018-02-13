@@ -18,6 +18,7 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)
 * `mysql`
+* `mariadb` (uses mysql drivers)
 * `pgsql`
 * `sqlite`
 
@@ -71,14 +72,15 @@ web:
         DB_DATABASE: dbname
         DB_USERNAME: username
         DB_PASSWORD: p455w0rd
-        DB_CONNECTION: [pgsql or mysql]
+        DB_CONNECTION: [pgsql or mysql] #use mysql for mariadb
 db:
-    image: [postgres or mysql]
+    image: [postgres or mysql or mariadb]
     environment:
         # with mysql
         MYSQL_DATABASE: dbname
         MYSQL_USER: username
         MYSQL_PASSWORD: p455w0rd
+        MYSQL_ROOT_PASSWORD: p455w0rd
 
         # with postgres
         POSTGRES_DB: dbname
