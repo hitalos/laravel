@@ -1,15 +1,13 @@
 FROM hitalos/php:debian
 LABEL maintainer="hitalos <hitalos@gmail.com>"
 
+RUN apt-get install -y gnupg libpng-dev
+
 # Download and install NodeJS
-ENV NODE_VERSION 10.4.1
-ADD install-node.sh /usr/sbin/install-node.sh
-RUN /usr/sbin/install-node.sh
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
 RUN npm i -g yarn
 
-RUN mkdir -p /etc/ssl/certs && update-ca-certificates
-
-WORKDIR /var/www
 CMD php ./artisan serve --port=80 --host=0.0.0.0
 EXPOSE 80
 HEALTHCHECK --interval=1m CMD curl -f http://localhost/ || exit 1
