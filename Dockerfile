@@ -1,11 +1,5 @@
-FROM php
+FROM hitalos/php:debian
 LABEL maintainer="hitalos <hitalos@gmail.com>"
-
-RUN apt-get update && apt-get -y full-upgrade && apt-get install -y bash git
-
-# Install PHP extensions
-ADD install-php.sh /usr/sbin/install-php.sh
-RUN /usr/sbin/install-php.sh
 
 # Download and install NodeJS
 ENV NODE_VERSION 10.4.1
