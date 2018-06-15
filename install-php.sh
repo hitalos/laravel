@@ -1,25 +1,22 @@
 #!/bin/sh
 
-apk add freetds freetype icu libintl libldap libjpeg libmcrypt libpng libpq libwebp
-
-TMP="curl-dev \
-    freetds-dev \
-    freetype-dev \
-    gettext-dev \
-    icu-dev \
-    jpeg-dev \
+TMP="freetds-dev \
+    libcrypto++-dev \
+    libfreetype6-dev \
+    libicu-dev \
+    libldap2-dev \
+    libjpeg-dev \
     libmcrypt-dev \
     libpng-dev \
+    libpq-dev \
     libwebp-dev \
-    libxml2-dev \
-    openldap-dev \
-    postgresql-dev"
-apk add $TMP
+    libxml2-dev"
+apt-get install -y freetds-bin $TMP
 
 # Configure extensions
 docker-php-ext-configure gd --with-jpeg-dir=usr/ --with-freetype-dir=usr/ --with-webp-dir=usr/
 docker-php-ext-configure ldap --with-libdir=lib/
-docker-php-ext-configure pdo_dblib --with-libdir=lib/
+docker-php-ext-configure pdo_dblib --with-libdir=lib/x86_64-linux-gnu/
 
 # Download mongo extension
 /usr/local/bin/pecl download mongodb && \
@@ -28,7 +25,6 @@ docker-php-ext-configure pdo_dblib --with-libdir=lib/
     mv /usr/src/php/ext/mongo* /usr/src/php/ext/mongodb
 
 docker-php-ext-install \
-    curl \
     exif \
     gd \
     gettext \
@@ -49,7 +45,7 @@ php -r "readfile('https://getcomposer.org/installer');" | php && \
    mv composer.phar /usr/bin/composer && \
    chmod +x /usr/bin/composer
 
-apk del $TMP
+apt-get purge -y $TMP
 
 # Set timezone
 # RUN echo America/Maceio > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata

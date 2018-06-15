@@ -8,12 +8,15 @@ This image it's for development. **Optimize to use in production!**
 In the latest update, I changed the base image to `php:alpine` for size optimizing.
 
 ## Tags
-* [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.2.6
-   * `composer` 1.6.5
- * `nodejs` 10.4.1
-   * `npm` 6.1.0
-   * `yarn` 1.7.0
+* [**`latest`**](https://github.com/hitalos/laravel/blob/master/Dockerfile): For simple projects with faster deploy
+* [**`debian`**](https://github.com/hitalos/laravel/blob/debian/Dockerfile): For more complex projects. This larger image brings compilers and other packages.
+
+## Versions
+* `php` 7.2.6
+  * `composer` 1.6.5
+* `nodejs` 10.4.1
+  * `npm` 6.1.0
+  * `yarn` 1.7.0
 
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)
