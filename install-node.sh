@@ -13,4 +13,4 @@ curl -s -0 -L npmjs.org/install.sh | sh
 npm i -g yarn
 
 # Install build dependencies
-apk add autoconf automake g++ gcc libpng-dev make python
+apk add autoconf automake g++ gcc libpng-dev libtool make nasm python
