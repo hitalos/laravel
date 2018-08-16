@@ -12,13 +12,13 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 * [**`debian`**](https://github.com/hitalos/laravel/blob/debian/Dockerfile): For more complex projects. This larger image brings compilers and other packages.
 
 ## Versions
-* `php` 7.2.7
-  * `composer` 1.6.5
-  * `phpunit` 7.2.7
-  * `xdebug` 2.6.0
-* `nodejs` 10.6.0
-  * `npm` 6.1.0
-  * `yarn` 1.7.0
+* `php` 7.2.8
+  * `composer` 1.7.1
+  * `phpunit` 7.3.1
+  * `xdebug` 2.6.1
+* `nodejs` 10.8.0
+  * `npm` 6.4.0
+  * `yarn` 1.9.4
 
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)
