@@ -3,7 +3,8 @@
 # laravel
 Docker image to run PHP (supporting Laravel) and Node projects.
 
-This image it's for development. **Optimize to use in production!**
+This image is for development purposes. 
+**Not optimized for use in production!**
 
 In the latest update, I changed the base image to `php:alpine` for size optimizing.
 
