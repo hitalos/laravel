@@ -1,13 +1,10 @@
 #!/bin/sh
 
-mkdir -p /usr/local/lib/nodejs
-
-# Install latest LTS node version
-echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
-apk add -U nodejs@edge libuv@edge
+# Install current LTS node version
+apk add -U nodejs-current
 
 # Install latest NPM
-curl -s -0 -L npmjs.org/install.sh | sh
+curl -s -L npmjs.org/install.sh | sh
 
 # Install Yarn
 npm i -g yarn
