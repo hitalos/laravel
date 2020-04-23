@@ -9,13 +9,13 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 
 ## Tags
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.4.3
-   * `composer` 1.9.3
-   * `phpunit` 9.0.1
-   * `xdebug` 2.9.2
+ * `php` 7.4.5
+   * `composer` 1.10.5
+   * `phpunit` 9.1.2
+   * `xdebug` 2.9.4
  * `nodejs` 13.1.0
-   * `npm` 6.14.1
-   * `yarn` 1.22.0
+   * `npm` 6.14.4
+   * `yarn` 1.22.4
 
 ## Supported Databases (**PDO**)
 * `mssql` (via dblib)
