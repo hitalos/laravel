@@ -1,6 +1,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/hitalos/laravel.svg)
 
 # laravel
+
 Docker image to run PHP (supporting Laravel) and Node projects.
 
 This image it's for development. **Optimize to use in production!**
@@ -8,22 +9,25 @@ This image it's for development. **Optimize to use in production!**
 In the latest update, I changed the base image to `php:alpine` for size optimizing.
 
 ## Tags
+
 * [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
- * `php` 7.4.12
-   * `composer` 2.0.7
-   * `phpunit` 9.4.3
-   * `xdebug` 2.9.8
- * `nodejs` 14.5.0
-   * `npm` 6.14.8
-   * `yarn` 1.22.10
+  * `php` 8.0.6
+    * `composer` 2.0.13
+    * `phpunit` 9.5.4
+    * `xdebug` 3.0.4
+  * `nodejs` 15.10.0
+    * `npm` 7.12.1
+    * `yarn` 1.22.10
 
 ## Supported Databases (**PDO**)
+
 * `mssql` (via dblib)
 * `mysql`
 * `pgsql`
 * `sqlite`
 
 ## Extra supported extensions
+
 * `curl`
 * `exif`
 * `gd`
@@ -31,18 +35,26 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 * `mongodb`
 
 ## Installing
-    docker pull hitalos/laravel
+
+```shell
+docker pull hitalos/laravel
+```
 
 ## Using
 
 ### With `docker`
-    docker run --name <container_name> -d -v $PWD:/var/www -p 80:80 hitalos/laravel
+
+```shell
+docker run --name <container_name> -d -v $PWD:/var/www -p 80:80 hitalos/laravel
+```
+
 Where $PWD is the laravel installation folder.
 
 ### With `docker-compose`
 
 Create a `docker-compose.yml` file in the root folder of project using this as a template:
-```
+
+```yml
 web:
     image: hitalos/laravel:latest
     ports:
@@ -55,11 +67,13 @@ web:
 
 Then run using this command:
 
-    docker-compose up
-
+```shell
+docker-compose up
+```
 
 If you want to use a database, you can create your `docker-compose.yml` with two containers.
-```
+
+```yml
 web:
     image: hitalos/laravel:latest
     ports:
